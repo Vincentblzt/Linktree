@@ -24,6 +24,13 @@ function App() {
 
       <div className="content">
         <div className="profile-section">
+          <div className="profile-image-wrapper">
+            <img
+              src={profileImage}
+              alt={profile.name}
+              className="profile-image"
+            />
+          </div>
           <h1 className="name">{profile.name}</h1>
           <p className="title">{profile.title}</p>
         </div>
