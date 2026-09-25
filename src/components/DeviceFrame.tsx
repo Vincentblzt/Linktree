@@ -48,7 +48,7 @@ const CompactLinkButton: React.FC<{ label: string; url: string; icon: string; va
       rel="noopener noreferrer"
       className="h-[52px] rounded-full bg-black text-white flex items-center justify-between px-6 group transition-all active:scale-[0.99] hover:opacity-90"
     >
-      <span className="font-semibold text-[15px] whitespace-nowrap">{label}</span>
+      <span className="font-semibold text-[13px] whitespace-nowrap">{label}</span>
       <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-black ml-4 group-hover:scale-110 transition-transform flex-shrink-0">
         <i className="fa-solid fa-arrow-up-right text-lg"></i>
       </div>
