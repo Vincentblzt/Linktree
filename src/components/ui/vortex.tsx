@@ -7,11 +7,11 @@ import * as THREE from "three";
 import {
   SceneContainer,
   type SceneContainerProps,
-} from "@/components/ui/vortex-utils/scene-container";
+} from "./vortex-utils/scene-container";
 import {
   useShadcnTheme,
   type ThemeMode,
-} from "@/components/ui/vortex-utils/use-shadcn-theme";
+} from "./vortex-utils/use-shadcn-theme";
 
 function seedVortex(count: number, arms: number) {
   const positions = new Float32Array(count * 3);

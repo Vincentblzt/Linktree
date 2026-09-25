@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import profileImage from './assets/profile.webp';
+import Vortex from './components/ui/vortex.tsx';
 
 function App() {
   const profile = {
@@ -20,9 +21,12 @@ function App() {
 
   return (
     <div className="app" style={{ backgroundImage: `url(${profileImage})` }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
+        <Vortex theme="dark" />
+      </div>
       <div className="overlay"></div>
 
-      <div className="content">
+      <div className="content" style={{ position: 'relative', zIndex: 1 }}>
         <div className="profile-section">
           <div className="profile-image-wrapper">
             <img

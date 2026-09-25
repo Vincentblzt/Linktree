@@ -1,4 +1,4 @@
-import Vortex from "@/components/ui/vortex";
+import Vortex from "./vortex";
 
 export default function VortexDemo() {
   return (
