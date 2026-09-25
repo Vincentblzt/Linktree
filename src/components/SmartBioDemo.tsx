@@ -33,9 +33,9 @@ const DEMO_CONFIG: SmartBioConfig = {
     },
     {
       id: '3',
-      label: 'Book a call',
-      url: 'https://calendly.com',
-      icon: 'fa-regular fa-calendar-check',
+      label: 'Message me',
+      url: 'https://wa.me/33614224708',
+      icon: 'fa-brands fa-whatsapp',
       variant: 'gradient',
     },
     {
