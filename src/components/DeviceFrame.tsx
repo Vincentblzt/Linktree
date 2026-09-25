@@ -12,8 +12,8 @@ const SocialIcon: React.FC<{ platform: string; url?: string }> = ({ platform, ur
   const logoMap: Record<string, string> = {
     twitter: '/twitter-logo.jpg',
     linkedin: '/linkedin-logo.jpg',
-    instagram: '/instagram-logo.jpg',
-    youtube: '/youtube-logo.jpg',
+    substack: '/portfolio-logo.png',
+    skool: '/skype-logo.jpg',
   };
 
   const logoUrl = logoMap[platform];
@@ -24,7 +24,7 @@ const SocialIcon: React.FC<{ platform: string; url?: string }> = ({ platform, ur
         href={url || '#'}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-10 h-10 rounded-full overflow-hidden hover:scale-105 transition-transform shadow-md"
+        className="w-10 h-10 flex-shrink-0 rounded-full overflow-hidden hover:scale-105 transition-transform shadow-md bg-white"
       >
         <img src={logoUrl} alt={platform} className="w-full h-full object-cover" />
       </a>
@@ -36,7 +36,7 @@ const SocialIcon: React.FC<{ platform: string; url?: string }> = ({ platform, ur
       href={url || '#'}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:scale-105 transition-transform shadow-md"
+      className="w-10 h-10 flex-shrink-0 rounded-full bg-black text-white flex items-center justify-center hover:scale-105 transition-transform shadow-md"
     >
       <i className="fa-link text-white"></i>
     </a>
@@ -164,17 +164,10 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({ isMockupView, config, 
           <div className="flex items-center justify-center gap-3.5 my-2">
             {config.socials.twitter && <SocialIcon platform="twitter" url={config.socials.twitter} />}
             {config.socials.linkedin && <SocialIcon platform="linkedin" url={config.socials.linkedin} />}
-            {config.socials.instagram && <SocialIcon platform="instagram" url={config.socials.instagram} />}
-            {config.socials.youtube && <SocialIcon platform="youtube" url={config.socials.youtube} />}
           </div>
 
           {/* Divider */}
           <div className="w-3/4 max-w-[260px] mx-auto border-b border-gray-100 my-5"></div>
-
-          {/* Contact Heading */}
-          <div className="px-5 mb-3">
-            <h2 className="text-[14px] font-semibold text-gray-800">Contact</h2>
-          </div>
 
           {/* Links Section */}
           <div className="px-5 space-y-3 mb-6">
@@ -185,6 +178,12 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({ isMockupView, config, 
             {config.links.length > 2 && (
               <>
                 <div className="w-3/4 max-w-[260px] mx-auto border-b border-gray-100 !my-4"></div>
+
+                {/* Contact Heading */}
+                <div className="px-0 mb-2">
+                  <h2 className="text-[14px] font-semibold text-gray-800">Contact</h2>
+                </div>
+
                 <div className="grid grid-cols-2 gap-2.5">
                   {config.links.slice(2).map((link) => (
                     <CompactLinkButton key={link.id} label={link.label} url={link.url} icon={link.icon} variant={link.variant} />

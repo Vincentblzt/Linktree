@@ -13,8 +13,8 @@ const DEMO_CONFIG: SmartBioConfig = {
   socials: {
     twitter: 'https://x.com/Vincentbalazut',
     linkedin: 'https://www.linkedin.com/in/vincentbalazut/',
-    instagram: 'https://instagram.com',
-    youtube: 'https://youtube.com',
+    substack: 'https://substack.com',
+    skool: 'https://skool.com',
   },
   links: [
     {

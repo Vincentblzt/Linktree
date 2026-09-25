@@ -9,8 +9,8 @@ export interface SmartBioConfig {
   socials: {
     twitter?: string;
     linkedin?: string;
-    instagram?: string;
-    youtube?: string;
+    substack?: string;
+    skool?: string;
   };
   links: LinkItem[];
 }
