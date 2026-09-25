@@ -5,7 +5,7 @@ import { SmartBioConfig } from '../types/smartbio';
 const DEMO_CONFIG: SmartBioConfig = {
   title: 'Vincent BALAZUT',
   bio: 'Founder helping B2B companies scale revenue and operations.',
-  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+  avatar: '/vincent-avatar.webp',
   website: 'https://vincent-balazut.com',
   portfolio: '#',
   email: 'vincent.balazut@icloud.com',
