@@ -8,41 +8,6 @@ interface DeviceFrameProps {
   bio: string;
 }
 
-const SocialIcon: React.FC<{ platform: string; url?: string }> = ({ platform, url }) => {
-  const logoMap: Record<string, string> = {
-    twitter: '/twitter-logo.jpg',
-    linkedin: '/linkedin-logo.jpg',
-    substack: '/portfolio-logo.png',
-    skool: '/skype-logo.jpg',
-  };
-
-  const logoUrl = logoMap[platform];
-
-  if (logoUrl) {
-    return (
-      <a
-        href={url || '#'}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-10 h-10 flex-shrink-0 rounded-full overflow-hidden hover:scale-105 transition-transform shadow-md bg-white"
-      >
-        <img src={logoUrl} alt={platform} className="w-full h-full object-cover" />
-      </a>
-    );
-  }
-
-  return (
-    <a
-      href={url || '#'}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-10 h-10 flex-shrink-0 rounded-full bg-black text-white flex items-center justify-center hover:scale-105 transition-transform shadow-md"
-    >
-      <i className="fa-link text-white"></i>
-    </a>
-  );
-};
-
 const LinkButton: React.FC<LinkItem> = ({ label, url, icon, variant }) => {
   const baseClass = 'w-full h-[52px] rounded-[26px] px-5 flex items-center justify-between group transition-all active:scale-[0.99]';
 
