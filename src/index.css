@@ -1,3 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 0 0% 3%;
+    --muted-foreground: 240 3% 66%;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --primary: 0 0% 98%;
+      --muted-foreground: 240 4% 45%;
+    }
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
