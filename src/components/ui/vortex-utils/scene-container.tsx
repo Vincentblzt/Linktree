@@ -1,14 +1,16 @@
 "use client";
 
 import * as React from "react";
-import { Canvas, type CanvasProps } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { useEffect, useState } from "react";
 import type { ThemeMode } from "./use-shadcn-theme";
 
-export type SceneContainerProps = CanvasProps & {
+export type SceneContainerProps = {
   className?: string;
   theme?: ThemeMode;
   environment?: "night" | "city" | "park" | "dawn" | "sunset";
+  camera?: [number, number, number] | { position?: [number, number, number]; fov?: number };
+  children?: React.ReactNode;
 };
 
 export function SceneContainer({
@@ -17,7 +19,6 @@ export function SceneContainer({
   environment = "night",
   children,
   camera = [0, 0, 50],
-  ...canvasProps
 }: SceneContainerProps) {
   const [mounted, setMounted] = useState(false);
 
@@ -33,14 +34,16 @@ export function SceneContainer({
     );
   }
 
+  const cameraConfig = Array.isArray(camera)
+    ? { position: camera as [number, number, number], fov: 75 }
+    : { position: [0, 0, 50] as [number, number, number], fov: 75, ...camera };
+
   return (
     <Canvas
-      {...canvasProps}
-      camera={{ position: Array.isArray(camera) ? camera : [0, 0, 50], fov: 75 }}
+      camera={cameraConfig}
       className={className}
       style={{
         background: "transparent",
-        ...canvasProps.style,
       }}
     >
       {children}

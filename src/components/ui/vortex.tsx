@@ -115,8 +115,7 @@ export function Vortex({
       className={className}
       theme={theme}
       environment={environment}
-      camera={[0, 3, 8]}
-      fov={45}
+      camera={{ position: [0, 3, 8], fov: 45 }}
     >
       <Spiral count={count} speed={speed} arms={arms} theme={theme} />
     </SceneContainer>
