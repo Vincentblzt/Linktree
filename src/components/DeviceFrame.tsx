@@ -167,12 +167,6 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({ isMockupView, config, 
             <img src="/twitter-logo.jpg" alt="Twitter" className="h-6 w-6 object-cover rounded" />
           </div>
 
-          {/* Social Icons */}
-          <div className="flex items-center justify-center gap-3.5 my-2">
-            {config.socials.twitter && <SocialIcon platform="twitter" url={config.socials.twitter} />}
-            {config.socials.linkedin && <SocialIcon platform="linkedin" url={config.socials.linkedin} />}
-          </div>
-
           {/* Divider */}
           <div className="w-3/4 max-w-[260px] mx-auto border-b border-gray-100 my-5"></div>
 
