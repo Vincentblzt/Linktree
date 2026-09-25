@@ -1,5 +1,6 @@
 import React from 'react';
 import { SmartBioConfig, LinkItem } from '../types/smartbio';
+import TopologyField from './TopologyField';
 
 interface DeviceFrameProps {
   isMockupView: boolean;
@@ -96,11 +97,9 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({ isMockupView, config, 
 
         {/* Scrollable Content */}
         <div className="flex-1 overflow-y-auto relative no-scrollbar pb-16">
-          {/* Aurora Header */}
-          <div className="relative h-[220px] aurora-bg pt-12 px-6 flex flex-col justify-between">
-            <svg className="absolute bottom-0 left-0 w-full overflow-hidden" viewBox="0 0 500 150" preserveAspectRatio="none">
-              <path d="M0,80 C150,150 350,150 500,80 L500,150 L0,150 Z" fill="#ffffff"></path>
-            </svg>
+          {/* Topology Field Background */}
+          <div className="relative h-[220px] w-full">
+            <TopologyField />
           </div>
 
           {/* Avatar */}
