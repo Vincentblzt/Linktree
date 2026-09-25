@@ -1,6 +1,7 @@
 import React from 'react';
 import { SmartBioConfig, LinkItem } from '../types/smartbio';
 import TopologyField from './TopologyField';
+import { RotatingOrbs } from './RotatingOrbs';
 
 interface DeviceFrameProps {
   isMockupView: boolean;
@@ -85,6 +86,9 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({ isMockupView, config, 
 
       {/* Screen Frame */}
       <div id="screenFrame" className="relative w-full h-full bg-white rounded-[42px] overflow-hidden flex flex-col justify-between select-none">
+        {/* Rotating Orbs Background */}
+        <RotatingOrbs />
+
         {/* Status Bar */}
         <div className="absolute top-0 left-0 right-0 z-40 px-7 pt-3.5 pb-2 flex justify-between items-center text-white text-xs font-semibold pointer-events-none">
           <div></div>
@@ -98,12 +102,12 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({ isMockupView, config, 
         {/* Scrollable Content */}
         <div className="flex-1 overflow-y-auto relative no-scrollbar pb-16">
           {/* Topology Field Background */}
-          <div className="relative h-[220px] w-full">
+          <div className="relative h-[140px] w-full">
             <TopologyField />
           </div>
 
           {/* Avatar */}
-          <div className="relative -mt-[62px] flex justify-center z-20">
+          <div className="relative -mt-[45px] flex justify-center z-20">
             <div className="w-[110px] h-[110px] rounded-full p-[3px] bg-white shadow-xl">
               <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-b from-pink-200 to-purple-300 flex items-center justify-center">
                 <img
