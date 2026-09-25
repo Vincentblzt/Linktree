@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { SmartBioConfig, ToastMessage } from '../types/smartbio';
 import { ControlBar } from './ControlBar';
 import { EditorPanel } from './EditorPanel';
@@ -11,7 +11,7 @@ interface SmartBioProps {
 }
 
 export const SmartBio: React.FC<SmartBioProps> = ({ initialConfig, shareUrl = 'https://smarbio.ai/yourpage' }) => {
-  const [config, setConfig] = useState<SmartBioConfig>(initialConfig);
+  const config = initialConfig;
   const [title, setTitle] = useState(initialConfig.title);
   const [bio, setBio] = useState(initialConfig.bio);
   const [isMockupView, setIsMockupView] = useState(true);
