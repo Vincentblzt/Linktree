@@ -41,27 +41,17 @@ const CompactLinkButton: React.FC<{ label: string; url: string; icon: string; va
   icon,
   variant,
 }) => {
-  const variantClass = {
-    light: 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50',
-    dark: 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:opacity-95',
-    gradient: 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:opacity-95',
-  };
-
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`h-[52px] rounded-[26px] px-3 flex items-center justify-center gap-2 group transition-all active:scale-[0.99] ${variantClass[variant]}`}
+      className="h-[52px] rounded-[26px] bg-black text-white flex items-center justify-between px-4 group transition-all active:scale-[0.99] hover:opacity-90"
     >
-      <div
-        className={`w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0 ${
-          variant === 'light' ? 'bg-gray-100 text-gray-600' : 'bg-white/20 text-white'
-        }`}
-      >
-        <i className={icon}></i>
-      </div>
       <span className="font-semibold text-[13px]">{label}</span>
+      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black ml-3 group-hover:scale-110 transition-transform">
+        <i className="fa-solid fa-arrow-up-right text-sm"></i>
+      </div>
     </a>
   );
 };
