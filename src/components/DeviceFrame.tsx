@@ -127,9 +127,15 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({ isMockupView, config, 
 
           {/* Logo Row Under Bio */}
           <div className="flex items-center justify-center gap-4 mb-4">
-            <img src="/linkedin-logo.jpg" alt="LinkedIn" className="h-8 w-8 object-cover rounded" />
-            <img src="/portfolio-logo.png" alt="Substack" className="h-8 w-8 object-cover rounded" />
-            <img src="/twitter-logo.jpg" alt="Twitter" className="h-8 w-8 object-cover rounded" />
+            <a href="https://www.linkedin.com/in/vincentbalazut/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+              <img src="/linkedin-logo.jpg" alt="LinkedIn" className="h-8 w-8 object-cover rounded" />
+            </a>
+            <a href="https://x.com/Vincentbalazut" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+              <img src="/twitter-logo.jpg" alt="X" className="h-8 w-8 object-cover rounded" />
+            </a>
+            <a href="https://substack.com/@vincentbalazut" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+              <img src="/portfolio-logo.png" alt="Substack" className="h-8 w-8 object-cover rounded" />
+            </a>
           </div>
 
           {/* Divider */}
