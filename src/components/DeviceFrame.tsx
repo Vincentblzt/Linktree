@@ -50,7 +50,7 @@ const CompactLinkButton: React.FC<{ label: string; url: string; icon: string; va
     >
       <span className="font-semibold text-[13px] whitespace-nowrap">{label}</span>
       <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-black ml-4 group-hover:scale-110 transition-transform flex-shrink-0">
-        <i className="fa-solid fa-arrow-up-right text-lg"></i>
+        <i className="fa-solid fa-arrow-up-right text-xl font-bold"></i>
       </div>
     </a>
   );
