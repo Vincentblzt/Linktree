@@ -46,11 +46,11 @@ const CompactLinkButton: React.FC<{ label: string; url: string; icon: string; va
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="h-[52px] rounded-[26px] bg-black text-white flex items-center justify-between px-4 group transition-all active:scale-[0.99] hover:opacity-90"
+      className="h-12 rounded-full bg-black text-white flex items-center justify-between px-5 group transition-all active:scale-[0.99] hover:opacity-90"
     >
-      <span className="font-semibold text-[13px]">{label}</span>
-      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black ml-3 group-hover:scale-110 transition-transform">
-        <i className="fa-solid fa-arrow-up-right text-sm"></i>
+      <span className="font-semibold text-sm whitespace-nowrap">{label}</span>
+      <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black ml-4 group-hover:scale-110 transition-transform flex-shrink-0">
+        <i className="fa-solid fa-arrow-up-right text-xs"></i>
       </div>
     </a>
   );
