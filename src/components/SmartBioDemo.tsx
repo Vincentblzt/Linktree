@@ -33,7 +33,7 @@ const DEMO_CONFIG: SmartBioConfig = {
     },
     {
       id: '3',
-      label: 'Message me',
+      label: 'Whatsapp',
       url: 'https://wa.me/33614224708',
       icon: 'fa-brands fa-whatsapp',
       variant: 'gradient',
