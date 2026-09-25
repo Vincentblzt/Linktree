@@ -66,10 +66,36 @@ const CompactLinkButton: React.FC<{ label: string; url: string; icon: string; va
 };
 
 export const DeviceFrame: React.FC<DeviceFrameProps> = ({ isMockupView, config, title, bio }) => {
+  const containerClass = isMockupView
+    ? 'w-[375px] h-[780px] bg-black rounded-[52px] p-[10px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] border-[4px] border-[#2d2f36]'
+    : 'w-[380px] h-[750px] bg-transparent';
+
   return (
-    <div id="screenFrame" className="relative w-full min-h-screen bg-white overflow-hidden flex flex-col justify-between select-none">
-      {/* Scrollable Content */}
-      <div className="flex-1 overflow-y-auto relative no-scrollbar">
+    <div className={`relative ${containerClass} transition-all duration-300`}>
+      {/* iPhone Hardware Buttons */}
+      {isMockupView && (
+        <>
+          <div className="absolute -left-[7px] top-[115px] w-[3px] h-[26px] bg-gray-700 rounded-l-md"></div>
+          <div className="absolute -left-[7px] top-[155px] w-[3px] h-[50px] bg-gray-700 rounded-l-md"></div>
+          <div className="absolute -left-[7px] top-[215px] w-[3px] h-[50px] bg-gray-700 rounded-l-md"></div>
+          <div className="absolute -right-[7px] top-[180px] w-[3px] h-[70px] bg-gray-700 rounded-r-md"></div>
+        </>
+      )}
+
+      {/* Screen Frame */}
+      <div id="screenFrame" className="relative w-full h-full bg-white rounded-[42px] overflow-hidden flex flex-col justify-between select-none">
+        {/* Status Bar */}
+        <div className="absolute top-0 left-0 right-0 z-40 px-7 pt-3.5 pb-2 flex justify-between items-center text-white text-xs font-semibold pointer-events-none">
+          <div></div>
+          <div className="w-[96px] h-[25px] bg-black rounded-full flex items-center justify-between px-2.5 shadow-md">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#0a0a0f]/80"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-blue-950/60 border border-blue-900/40"></div>
+          </div>
+          <div></div>
+        </div>
+
+        {/* Scrollable Content */}
+        <div className="flex-1 overflow-y-auto relative no-scrollbar pb-16">
           {/* Aurora Header */}
           <div className="relative h-[220px] aurora-bg pt-12 px-6 flex flex-col justify-between">
             <svg className="absolute bottom-0 left-0 w-full overflow-hidden" viewBox="0 0 500 150" preserveAspectRatio="none">
@@ -138,6 +164,10 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({ isMockupView, config, 
               </>
             )}
           </div>
+        </div>
+
+        {/* Home Indicator */}
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-gray-300 rounded-full z-40"></div>
       </div>
     </div>
   );
