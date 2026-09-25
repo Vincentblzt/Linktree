@@ -1,0 +1,59 @@
+@layer components {
+  /* Aurora Background Gradient */
+  .aurora-bg {
+    @apply relative bg-[#090918];
+    background:
+      radial-gradient(circle at 15% 25%, rgba(6, 182, 212, 0.95) 0%, transparent 45%),
+      radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.95) 0%, transparent 50%),
+      radial-gradient(circle at 50% 75%, rgba(236, 72, 153, 0.85) 0%, transparent 55%),
+      radial-gradient(circle at 90% 85%, rgba(59, 130, 246, 0.8) 0%, transparent 45%),
+      #090918;
+    background-blend-mode: screen, normal, normal, normal, normal;
+  }
+
+  /* Glass Effect Buttons */
+  .btn-dark-glass {
+    @apply bg-gradient-to-b from-gray-700 to-gray-900 shadow-md;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-light-glass {
+    @apply bg-white border border-gray-200 shadow-sm;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Avatar Glow Effect */
+  .avatar-glow {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Remove scrollbar */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom scrollbar for other elements */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+/* Font Configuration */
+body {
+  font-family: 'Satoshi', 'Inter', sans-serif;
+  user-select: none;
+}
