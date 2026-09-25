@@ -9,19 +9,36 @@ interface DeviceFrameProps {
 }
 
 const SocialIcon: React.FC<{ platform: string; url?: string }> = ({ platform, url }) => {
-  const platformClass: Record<string, string> = {
-    twitter: 'fa-brands fa-x-twitter text-base',
-    linkedin: 'fa-brands fa-linkedin-in text-sm',
-    instagram: 'fa-brands fa-instagram text-base',
-    youtube: 'fa-brands fa-youtube text-base',
+  const logoMap: Record<string, string> = {
+    twitter: '/twitter-logo.jpg',
+    linkedin: '/linkedin-logo.jpg',
+    instagram: '/instagram-logo.jpg',
+    youtube: '/youtube-logo.jpg',
   };
+
+  const logoUrl = logoMap[platform];
+
+  if (logoUrl) {
+    return (
+      <a
+        href={url || '#'}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-10 h-10 rounded-full overflow-hidden hover:scale-105 transition-transform shadow-md"
+      >
+        <img src={logoUrl} alt={platform} className="w-full h-full object-cover" />
+      </a>
+    );
+  }
 
   return (
     <a
       href={url || '#'}
+      target="_blank"
+      rel="noopener noreferrer"
       className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:scale-105 transition-transform shadow-md"
     >
-      <i className={platformClass[platform]}></i>
+      <i className="fa-link text-white"></i>
     </a>
   );
 };
@@ -153,6 +170,11 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({ isMockupView, config, 
 
           {/* Divider */}
           <div className="w-3/4 max-w-[260px] mx-auto border-b border-gray-100 my-5"></div>
+
+          {/* Contact Heading */}
+          <div className="px-5 mb-3">
+            <h2 className="text-[14px] font-semibold text-gray-800">Contact</h2>
+          </div>
 
           {/* Links Section */}
           <div className="px-5 space-y-3 mb-6">
